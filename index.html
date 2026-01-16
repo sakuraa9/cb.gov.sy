@@ -27,8 +27,17 @@
       display: block;
       margin: 0 auto;
       width: min(600px, 95%);
-      -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
-      mask-image: radial-gradient(circle, black 60%, transparent 100%);
+
+      /* rectangular, soft fade */
+      -webkit-mask-image:
+        linear-gradient(to top, transparent 0%, black 20%, black 80%, transparent 100%),
+        linear-gradient(to left, transparent 0%, black 20%, black 80%, transparent 100%);
+      -webkit-mask-composite: intersect;
+
+      mask-image:
+        linear-gradient(to top, transparent 0%, black 20%, black 80%, transparent 100%),
+        linear-gradient(to left, transparent 0%, black 20%, black 80%, transparent 100%);
+      mask-composite: intersect;
     }
 
     .big-text {
